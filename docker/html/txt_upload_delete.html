@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>ASISTENT</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="asistent.css" />
+
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-72424239-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<header>
+		
+			<div class="container">
+				
+				<div class="alighleft">
+					<span class="logo"><span class="green">ASISTENT</span></span>
+						English-Slavic Translation System
+<!--					a Slovene-Serbian-croaTian machinE traNslation sysTem-->
+				</div>
+
+				<ul class="alighright">
+					<li><a href="http://server1.nlp.insight-centre.org/asistent" TARGET="_self"><i class="fa fa-home"></i> Home</a></li>
+					<li><a href="./about.html"><i class="fa fa-comment"></i> About</a></li>
+					<li><a href="./team.html"><i class="fa fa-users"></i> Team</a></li>
+					<li><a href="./rest_service.html"><i class="fa fa-cogs"></i> API</a></li>
+					<li><a href="./txt_upload.html"><i class="fa fa-file-code-o"></i> TXT Upload</a></li>
+					<li>
+						<a href="#"><i class="fa fa-tags"></i> Other Projects </a>
+						<ul>
+							<li><a href="../iris" target="_top">IRIS</a></li>
+							<li><a href="../otto" target="_top">OTTO</a></li>
+							<li><a href="../asistent" target="_top">ASISTENT</a></li>
+							<li><a href="../tetra" target="_top">TeTra</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="clear"></div>
+				
+			</div>
+
+		</header>
+		
+		<div class="container">
+			<div class="contents">
+				<form action="http://server1.nlp.insight-centre.org/cgi-bin/asistent_txt.cgi" method="POST" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="document.getElementById('loadingholder').style.display = 'block'">
+
+					<p>Upload the TXT file to be translated:</p>
+
+					<input type="file" name="onto"><br /><br />
+
+					<br>
+					
+					<input class="button" type="submit" name="Submit" value="Submit Data"><br /><br />
+
+					<p>E-mail (optional): </p>
+
+					<input type="email" name="email"><br>
+
+					<p style="text-align:justify">The translation of a TXT file may take several minutes. The provided optional email will be used to inform the user of the start and end of the translation process, as well the web address where the data will be stored. After the translation process, the provided email will be deleted from the system.</p><br><br><br><br><br><br>
+					<table width="100%" border="0">
+					<tr>
+						<td></td>
+						<td><div style="text-align: right">This service is brought to you by<br> <a href="http://nuig.insight-centre.org/unlp/" target="_blank">http://nuig.insight-centre.org/unlp/</a></div></td>
+					</tr>
+					</table>
+			</div>
+
+			<div class="sidebar" style="text-align:justify;line-height:22px"> <!--line-height:18px-->
+
+				<p>ASISTENT (or assistant@en) was developed to translate text between English and the morphological complex south Slavic languages: Slovene, Serbian and Croatian.</p><br/>
+				
+			<div style="text-align:justify;line-height:26px">
+
+				<table border="0" width="105%">
+				<tr><td colspan="2" style='text-align:left'>Select translation option/approach:</td></tr>
+				<tr>
+				<td colspan="3">
+				<table width="100%">
+				<tr>
+				<td style='text-align:left'><label><input checked type="radio" name="method" value="generic"> phrase based</label></td>
+				<td style='text-align:left'><label><input type="radio" name="method" value="hierarchical"> hierarchical</label></td>
+				<td title="Experimental En->Sl only / Updates soon" style='text-align:left'><label><input type="radio" name="method" value="nmt"> neural</label></td>
+				
+				</tr>
+				</table>
+				<table width="100%">
+					<tr>
+						<td style='text-align:left'><label><input checked type="radio" name="approach" value="direct"> direct translation</label></td>
+						<td style='text-align:left;'><label><input type="radio" name="approach" value="pivot"> pivot translation</label></td>
+					</tr>
+				</table>
+				</td>
+				</tr>
+				
+
+				<tr><td><div style="text-align:justify;line-height:16px"><br></div></td></tr>
+
+				<tr><td colspan="2" style='text-align:left'>Please choose the translation direction:</td></tr>	
+				<tr>
+				<td style='text-align:left'><label><input checked type="radio" name="direction" value="en_sl"> English &rarr; Slovene</label></td>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="sl_en"> Slovene &rarr; English</label></td>
+				</tr>
+				<tr>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="en_hr"> English &rarr; Croatian</label></td>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="hr_en"> Croatian &rarr; English</label></td>
+				</tr>
+				<tr>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="en_sr"> English &rarr; Serbian</label></td>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="sr_en"> Serbian &rarr; English</label></td>
+				</tr>
+				<tr><td><div style="text-align:justify;line-height:12px"><br></div></td></tr>
+				
+				<tr>
+				<td style='text-align:left%'><label><input type="radio" name="direction" value="sl_hr"> Slovene &rarr; Croatian</label></td>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="hr_sl"> Croatian &rarr; Slovene</label></td>
+				</tr>
+				<tr>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="sr_sl"> Serbian &rarr; Slovene</label></td>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="sl_sr"> Slovene &rarr; Serbian</label></td>
+				</tr>
+				<tr>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="hr_sr"> Croatian &rarr; Serbian</label></td>
+				<td style='text-align:left'><label><input type="radio" name="direction" value="sr_hr"> Serbian &rarr; Croatian</label></td>
+				</tr>	
+
+				
+				</table>
+
+
+			
+			</div>
+			</form>
+
+<!--			<div class="clear"></div>-->
+		</div>
+		</div>
+
+		<footer>
+			<div class="container">
+				<a href="http://www.insight-centre.org/" target="_blank"><img src="insight_logo_transparent.png" /></a>
+				<a href="http://www.nuigalway.ie/index.html" target="_blank"><img src="nuigalway.png" /></a>
+				<a href="http://www.sfi.ie/" target="_blank"><img src="sfi.png" /></a>
+
+				<br />
+				<span style="font-size: smaller;">This resource has been funded by Grant No. SFI/12/RC/2289 - INSIGHT - National University of Ireland, Galway</span>
+
+				<br />
+			</div>
+		</footer>
+	</body>
+</html>

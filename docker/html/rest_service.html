@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>ASISTENT</title> <!--  - A SerbIan-Slovene-croaTian machinE traNslation sysTem -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="asistent.css" />
+
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-72424239-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
+	</head>
+	<body>
+		<header>
+		
+			<div class="container">
+				<div class="alighleft">
+					<span class="logo"><span class="green">ASISTENT</span></span>
+						English-Slavic Translation System
+<!--					a Slovene-Serbian-croaTian machinE traNslation sysTem-->
+				</div>
+
+				<ul class="alighright">
+					<li><a href="http://server1.nlp.insight-centre.org/asistent" TARGET="_self"><i class="fa fa-home"></i> Home</a></li>
+					<li><a href="./about.html"><i class="fa fa-comment"></i> About</a></li>
+					<li><a href="./team.html"><i class="fa fa-users"></i> Team</a></li>
+					<li><a href="./rest_service.html"><i class="fa fa-cogs"></i> API</a></li>
+					<li><a href="./txt_upload.html"><i class="fa fa-file-code-o"></i> TXT Upload</a></li>
+					<li>
+						<a href="#"><i class="fa fa-tags"></i> Other Projects </a>
+						<ul>
+							<li><a href="../iris" target="_top">IRIS</a></li>
+							<li><a href="../otto" target="_top">OTTO</a></li>
+							<li><a href="../asistent" target="_top">ASISTENT</a></li>
+							<li><a href="../tetra" target="_top">TeTra</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="clear"></div>
+				
+			</div>
+
+		</header>
+		
+		<div class="container">
+			<div class="contentsfull">
+
+<table border="0" >
+<tr>
+<td width="56%" valign="top">
+<table CELLSPACING=20>
+<tr><td><p class="big" style="text-align:justify">The ASISTENT  RESTful service enables the access of the translation system with other applications. For any questions, contact <a href="mailto:mihael.arcan@insight-centre.org?cc=paul.buitelaar@insight-centre.org">Mihael Arcan</a>, PhD Student at <a href="http://nuig.insight-centre.org/unlp/" target="_blank">Unit for Natural Language Processing</a> (UNLP), Insight @ NUI Galway.</p></td></tr>
+<tr><td><br>
+<p><b>Example:</b> Translating English text into/from a South Slavic within code: </p>
+<p></p>
+</td></tr>
+
+</table>
+
+</td>
+<td>
+<table border="1" style="float:right" >
+<tr><td>Translation direction</td><td>Code</td><td>Translation direction</td><td>Code</td></tr>
+<tr><td>English → Slovene</td><td>en_sl</td><td>Slovene → English</td><td>sl_en</td></tr>
+<tr><td>English → Croatian</td><td>en_hr</td><td>Croatian → English</td><td>hr_en</td></tr>
+<tr><td>English → Serbian</td><td>en_sr</td><td>Serbian → English</td><td>sr_en</td></tr>
+
+<tr><td>Slovene → Croatian</td><td>sl_hr</td><td>Croatian → Slovene</td><td>hr_sl</td></tr>
+<tr><td>Slovene → Serbian</td><td>sl_sr</td><td>Serbian → Slovene</td><td>sr_sl</td></tr>
+<tr><td>Croatian → Serbian</td><td>hr_sr</td><td>Serbian → Croatian</td><td>sr_hr</td></tr>
+
+</table>
+</td>
+</tr>
+</table>
+<br>
+
+<ul>
+
+<p><b>JSON INPUT (readable form)</b></p>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">{
+   <span style="color: #007700">&quot;translation_direction&quot;</span>:<span style="background-color: #fff0f0">&quot;en_sl&quot;</span>,
+   <span style="color: #007700">&quot;nbest&quot;</span>:<span style="background-color: #fff0f0">&quot;20&quot;</span>,
+   <span style="color: #007700">&quot;key&quot;</span>:<span style="background-color: #fff0f0">&quot;&quot;</span>,
+   <span style="color: #007700">&quot;text2translate&quot;</span>:[
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;This is a sentence&quot;</span>
+      },
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;The Weather is nice&quot;</span>
+      },
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;Thank God it is Friday&quot;</span>
+      },
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;I am working on Sunday&quot;</span>
+      }
+   ],
+   <span style="color: #007700">&quot;method&quot;</span>:<span style="background-color: #fff0f0">&quot;phrase_based&quot;</span>
+}
+</pre></div>
+
+<br>
+<p><b>JAVA EXAMPLE:</b></p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.BufferedReader</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.IOException</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.InputStreamReader</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.net.MalformedURLException</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.net.URL</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.net.URLConnection</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.net.URLEncoder</span><span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">RestApiExample</span> <span style="color: #333333">{</span>
+	<span style="color: #008800; font-weight: bold">static</span> String endpoint <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;http://server1.nlp.insight-centre.org/cgi-bin/asistent_restAPI.cgi?json=&quot;</span><span style="color: #333333">;</span>
+	<span style="color: #555555; font-weight: bold">@SuppressWarnings</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;deprecation&quot;</span><span style="color: #333333">)</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> String <span style="color: #0066BB; font-weight: bold">callApi</span><span style="color: #333333">(){</span>
+		String extractText <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;{\&quot;method\&quot;:\&quot;phrase_based\&quot;,\&quot;key\&quot;:\&quot;\&quot;,\&quot;translation_direction\&quot;:\&quot;en_sl\&quot;,\&quot;nbest\&quot;:\&quot;20\&quot;,\&quot;text2translate\&quot;:[{\&quot;source\&quot;:\&quot;This is a sentence\&quot;},{\&quot;source\&quot;:\&quot;The Weather is nice\&quot;},{\&quot;source\&quot;:\&quot;Thank God it is Friday\&quot;},{\&quot;source\&quot;:\&quot;I am working on Sunday\&quot;}]}&quot;</span><span style="color: #333333">;</span>
+		extractText <span style="color: #333333">=</span> URLEncoder<span style="color: #333333">.</span><span style="color: #0000CC">encode</span><span style="color: #333333">(</span>extractText<span style="color: #333333">).</span><span style="color: #0000CC">replace</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;+&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;%20&quot;</span><span style="color: #333333">);</span>
+		String query <span style="color: #333333">=</span> endpoint <span style="color: #333333">+</span> extractText<span style="color: #333333">;</span>
+		StringBuffer buffer <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> StringBuffer<span style="color: #333333">();</span>
+		<span style="color: #008800; font-weight: bold">try</span> <span style="color: #333333">{</span>
+			URL url <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> URL<span style="color: #333333">(</span>query<span style="color: #333333">);</span>
+			URLConnection connection <span style="color: #333333">=</span> url<span style="color: #333333">.</span><span style="color: #0000CC">openConnection</span><span style="color: #333333">();</span>
+			BufferedReader reader <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> BufferedReader<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> InputStreamReader<span style="color: #333333">(</span>connection<span style="color: #333333">.</span><span style="color: #0000CC">getInputStream</span><span style="color: #333333">()));</span>			
+			String inputLine <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+			<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">((</span>inputLine <span style="color: #333333">=</span> reader<span style="color: #333333">.</span><span style="color: #0000CC">readLine</span><span style="color: #333333">())</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span> 
+				buffer<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span>inputLine<span style="color: #333333">);</span>
+			<span style="color: #333333">}</span>
+			reader<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>			
+		<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">catch</span> <span style="color: #333333">(</span>MalformedURLException e<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			e<span style="color: #333333">.</span><span style="color: #0000CC">printStackTrace</span><span style="color: #333333">();</span>
+		<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">catch</span> <span style="color: #333333">(</span>IOException e<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			e<span style="color: #333333">.</span><span style="color: #0000CC">printStackTrace</span><span style="color: #333333">();</span>
+		<span style="color: #333333">}</span>
+		<span style="color: #008800; font-weight: bold">return</span> buffer<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+	<span style="color: #333333">}</span>
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		String outJson <span style="color: #333333">=</span> callApi<span style="color: #333333">();</span>		
+		System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>outJson<span style="color: #333333">);</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+
+<br>
+<p><b>PYTHON EXAMPLE:</b></p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">urllib</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">requests</span>
+jsonRequest <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;{&quot;method&quot;:&quot;phrase_based&quot;,&quot;key&quot;:&quot;&quot;,&quot;translation_direction&quot;:&quot;en_sl&quot;,&quot;nbest&quot;:&quot;20&quot;,&quot;text2translate&quot;:[{&quot;source&quot;:&quot;This is a sentence&quot;},{&quot;source&quot;:&quot;The Weather is nice&quot;},{&quot;source&quot;:&quot;Thank God it is Friday&quot;},{&quot;source&quot;:&quot;I am working on Sunday&quot;}]}&#39;</span>
+url <span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;http://server1.nlp.insight-centre.org/cgi-bin/asistent_restAPI.cgi?json=&quot;</span>
+data <span style="color: #333333">=</span>urllib<span style="color: #333333">.</span>quote(jsonRequest)
+r <span style="color: #333333">=</span> requests<span style="color: #333333">.</span>get(url<span style="color: #333333">+</span>data)
+translations <span style="color: #333333">=</span> r<span style="color: #333333">.</span>json()
+<span style="color: #008800; font-weight: bold">print</span>( translations ) 
+</pre></div>
+
+
+<br>
+<b>PERL EXAMPLE:</b>
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.20em .6em;"><table><tr><td><pre style="margin:5px; line-height: 125%">
+<span style="color: #008800; font-weight: bold">use</span> <span style="color: #0e84b5; font-weight: bold">LWP::</span>Simple;
+<span style="color: #008800; font-weight: bold">use</span> JSON;
+
+<span style="color: #008800; font-weight: bold">my</span> <span style="color: #996633">$json</span> <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;{&quot;</span>method<span style="background-color: #fff0f0">&quot;:&quot;</span>phrase_based<span style="background-color: #fff0f0">&quot;,&quot;</span>key<span style="background-color: #fff0f0">&quot;:&quot;</span><span style="background-color: #fff0f0">&quot;,&quot;</span>translation_direction<span style="background-color: #fff0f0">&quot;:&quot;</span>en_sl<span style="background-color: #fff0f0">&quot;,&quot;</span>nbest<span style="background-color: #fff0f0">&quot;:&quot;</span><span style="color: #0000DD; font-weight: bold">20</span><span style="background-color: #fff0f0">&quot;,&quot;</span>text2translate<span style="background-color: #fff0f0">&quot;:[{&quot;</span>source<span style="background-color: #fff0f0">&quot;:&quot;</span>This is a sentence<span style="background-color: #fff0f0">&quot;},{&quot;</span>source<span style="background-color: #fff0f0">&quot;:&quot;</span>The Weather is nice<span style="background-color: #fff0f0">&quot;},{&quot;</span>source<span style="background-color: #fff0f0">&quot;:&quot;</span>Thank God it is Friday<span style="background-color: #fff0f0">&quot;},{&quot;</span>source<span style="background-color: #fff0f0">&quot;:&quot;</span>I am working on Sunday<span style="background-color: #fff0f0">&quot;}]}&quot;</span>;
+<span style="color: #888888">#calling the ASISTENT translation API</span>
+<span style="color: #008800; font-weight: bold">my</span> <span style="color: #996633">$translations</span> <span style="color: #333333">=</span> get <span style="background-color: #fff0f0">&#39;http://server1.nlp.insight-centre.org/cgi-bin/asistent_restAPI.cgi?json=&#39;</span><span style="color: #333333">.</span><span style="color: #996633">$json</span><span style="color: #333333">.</span><span style="background-color: #fff0f0">&#39;&#39;</span>;
+</pre></td></tr></table></div>
+
+<br>
+<p><b>JSON OUTPUT (readable form)</b></p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">{
+   <span style="color: #007700">&quot;time&quot;</span>:<span style="background-color: #fff0f0">&quot; 9 wallclock secs ( 0.03 usr  0.00 sys + 22.83 cusr  5.01 csys = 27.87 CPU)&quot;</span>,
+   <span style="color: #007700">&quot;translation_direction&quot;</span>:<span style="background-color: #fff0f0">&quot;en_sl&quot;</span>,
+   <span style="color: #007700">&quot;nbest&quot;</span>:<span style="background-color: #fff0f0">&quot;20&quot;</span>,
+   <span style="color: #007700">&quot;text2translate&quot;</span>:[
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;This is a sentence&quot;</span>,
+         <span style="color: #007700">&quot;possible_translations&quot;</span>:{
+            <span style="color: #007700">&quot;je to stavek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.2028&quot;</span>,
+            <span style="color: #007700">&quot;je to stavek &quot;</span>:<span style="background-color: #fff0f0">&quot;-11.468&quot;</span>,
+            <span style="color: #007700">&quot;tole je stavek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.9379&quot;</span>,
+            <span style="color: #007700">&quot;to je kazen , &quot;</span>:<span style="background-color: #fff0f0">&quot;-11.9774&quot;</span>,
+            <span style="color: #007700">&quot;ta stavek &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.2359&quot;</span>,
+            <span style="color: #007700">&quot;je to kazen , &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.0048&quot;</span>,
+            <span style="color: #007700">&quot;tole je stavek &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.3612&quot;</span>,
+            <span style="color: #007700">&quot;to je kazni &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.6507&quot;</span>,
+            <span style="color: #007700">&quot;to je stavek &quot;</span>:<span style="background-color: #fff0f0">&quot;-11.5883&quot;</span>,
+            <span style="color: #007700">&quot;to je stavka &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.598&quot;</span>,
+            <span style="color: #007700">&quot;to je besedilo &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.4613&quot;</span>,
+            <span style="color: #007700">&quot;to je stavek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.1394&quot;</span>,
+            <span style="color: #007700">&quot;to je za kazen , &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.7192&quot;</span>,
+            <span style="color: #007700">&quot;to je en stavek &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.8839&quot;</span>,
+            <span style="color: #007700">&quot;to je kazen &quot;</span>:<span style="background-color: #fff0f0">&quot;-11.8215&quot;</span>,
+            <span style="color: #007700">&quot;to je za kazen &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.9021&quot;</span>,
+            <span style="color: #007700">&quot;to je obsodba &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.5537&quot;</span>,
+            <span style="color: #007700">&quot;ta je stavek &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.5634&quot;</span>,
+            <span style="color: #007700">&quot;je to kazen &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.4924&quot;</span>,
+            <span style="color: #007700">&quot;je to stavka &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.5161&quot;</span>
+         },
+         <span style="color: #007700">&quot;best_translation&quot;</span>:<span style="background-color: #fff0f0">&quot;je to stavek &quot;</span>
+      },
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;The Weather is nice&quot;</span>,
+         <span style="color: #007700">&quot;possible_translations&quot;</span>:{
+            <span style="color: #007700">&quot;vreme je lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-10.573&quot;</span>,
+            <span style="color: #007700">&quot;vreme se lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.9034&quot;</span>,
+            <span style="color: #007700">&quot;vreme je prijazen &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.0093&quot;</span>,
+            <span style="color: #007700">&quot;lepo vreme je , &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.5516&quot;</span>,
+            <span style="color: #007700">&quot;vreme je dober &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.0681&quot;</span>,
+            <span style="color: #007700">&quot;lepo vreme je &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.6058&quot;</span>,
+            <span style="color: #007700">&quot;vsaj vreme je lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.0351&quot;</span>,
+            <span style="color: #007700">&quot;je vreme dobro &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.7947&quot;</span>,
+            <span style="color: #007700">&quot;vreme bo lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.3354&quot;</span>,
+            <span style="color: #007700">&quot;slabo vreme je lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.7768&quot;</span>,
+            <span style="color: #007700">&quot;vreme je lep &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.781&quot;</span>,
+            <span style="color: #007700">&quot;vreme je dobro &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.1654&quot;</span>,
+            <span style="color: #007700">&quot;je vreme lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.8114&quot;</span>,
+            <span style="color: #007700">&quot;vreme lepo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.4584&quot;</span>,
+            <span style="color: #007700">&quot;vreme je lepa &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.2131&quot;</span>,
+            <span style="color: #007700">&quot;je lepo vreme &quot;</span>:<span style="background-color: #fff0f0">&quot;-12.4913&quot;</span>,
+            <span style="color: #007700">&quot;vreme je lepo , &quot;</span>:<span style="background-color: #fff0f0">&quot;-10.3823&quot;</span>,
+            <span style="color: #007700">&quot;vreme je &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.9532&quot;</span>,
+            <span style="color: #007700">&quot;vreme je super &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.3938&quot;</span>,
+            <span style="color: #007700">&quot;je vreme lepo , &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.2229&quot;</span>
+         },
+         <span style="color: #007700">&quot;best_translation&quot;</span>:<span style="background-color: #fff0f0">&quot;vreme je lepo , &quot;</span>
+      },
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;Thank God it is Friday&quot;</span>,
+         <span style="color: #007700">&quot;possible_translations&quot;</span>:{
+            <span style="color: #007700">&quot;hvala bogu , da se je v petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.4729&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu da je v petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.9606&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , petek je &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.7395&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , to je petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.0567&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je v petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.0112&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu da je v petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.7198&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , to je v petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.4293&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je v petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.2519&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je petek v &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.4669&quot;</span>,
+            <span style="color: #007700">&quot;hvalabogu , da je petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.4601&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , petek je , &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.9063&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da se je v petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.1675&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , saj je petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.2294&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , to je petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.5126&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , to je v petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.1886&quot;</span>,
+            <span style="color: #007700">&quot;hvalabogu , da je petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.1629&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je petka &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.5474&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je petek zvečer &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.486&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je petek , &quot;</span>:<span style="background-color: #fff0f0">&quot;-10.9492&quot;</span>,
+            <span style="color: #007700">&quot;hvala bogu , da je petek &quot;</span>:<span style="background-color: #fff0f0">&quot;-10.6519&quot;</span>
+         },
+         <span style="color: #007700">&quot;best_translation&quot;</span>:<span style="background-color: #fff0f0">&quot;hvala bogu , da je petek &quot;</span>
+      },
+      {
+         <span style="color: #007700">&quot;source&quot;</span>:<span style="background-color: #fff0f0">&quot;I am working on Sunday&quot;</span>,
+         <span style="color: #007700">&quot;possible_translations&quot;</span>:{
+            <span style="color: #007700">&quot;sem jaz dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.8408&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem delal v nedeljo , &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.2151&quot;</span>,
+            <span style="color: #007700">&quot;jaz pa dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.5259&quot;</span>,
+            <span style="color: #007700">&quot;saj sem dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.4876&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-13.9706&quot;</span>,
+            <span style="color: #007700">&quot;delam na nedeljo , &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.4677&quot;</span>,
+            <span style="color: #007700">&quot;jaz delam v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.9806&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem delala v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.5763&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem delal v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.0259&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem delala v nedeljo , &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.6381&quot;</span>,
+            <span style="color: #007700">&quot;da sem dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.8329&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem delal na nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.8197&quot;</span>,
+            <span style="color: #007700">&quot;sem , dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.5807&quot;</span>,
+            <span style="color: #007700">&quot;delam na nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.6296&quot;</span>,
+            <span style="color: #007700">&quot;jaz sem , dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.8374&quot;</span>,
+            <span style="color: #007700">&quot;delam v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.8295&quot;</span>,
+            <span style="color: #007700">&quot;jaz dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-15.893&quot;</span>,
+            <span style="color: #007700">&quot;delam v nedeljo , &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.1229&quot;</span>,
+            <span style="color: #007700">&quot;sem dela v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-14.7281&quot;</span>,
+            <span style="color: #007700">&quot;sem delal v nedeljo &quot;</span>:<span style="background-color: #fff0f0">&quot;-16.0428&quot;</span>
+         },
+         <span style="color: #007700">&quot;best_translation&quot;</span>:<span style="background-color: #fff0f0">&quot;jaz sem dela v nedeljo &quot;</span>
+      }
+   ],
+   <span style="color: #007700">&quot;method&quot;</span>:<span style="background-color: #fff0f0">&quot;phrase_based&quot;</span>,
+   <span style="color: #007700">&quot;key&quot;</span>:<span style="background-color: #fff0f0">&quot;&quot;</span>
+}
+</pre></div>
+
+
+
+<br
+
+</ul>
+
+
+			</div>
+		</div>
+
+		<footer>
+			<div class="container">
+				<a href="http://www.insight-centre.org/" target="_blank"><img src="insight_logo_transparent.png" /></a>
+
+				<a href="http://www.nuigalway.ie/index.html" target="_blank"><img src="nuigalway.png" /></a>
+				<a href="http://www.sfi.ie/" target="_blank"><img src="sfi.png" /></a>
+
+				<br />
+				<span style="font-size: smaller;">This resource has been funded by Grant No. SFI/12/RC/2289 - INSIGHT - National University of Ireland, Galway</span>
+
+				<br />
+			</div>
+		</footer>
+		<br clear="all" /><br />
+	</body>
+</html>
